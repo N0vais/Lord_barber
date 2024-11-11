@@ -59,8 +59,9 @@ class _AutenticationPage extends State<AutenticationPage> {
                 AppText.enText['forgot-password']!,
                 style: const TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black45,
+                  //fontWeight: FontWeight.bold,
+                  color: Colors.black,
+
                 ),
               ),
             ),
@@ -73,7 +74,7 @@ class _AutenticationPage extends State<AutenticationPage> {
                      style: TextStyle(
                        fontSize: 16,
                        fontWeight: FontWeight.normal,
-                       color: Colors.black12,
+                       color: Colors.white38,
                      ),
                    ),
                  ),

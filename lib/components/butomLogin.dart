@@ -1,8 +1,6 @@
 import 'package:barber_lord_definitivo/utils/config.dart';
 import 'package:flutter/material.dart';
 
-
-
 class Butomlogin extends StatelessWidget {
   const Butomlogin(
       {super.key,
@@ -22,8 +20,8 @@ class Butomlogin extends StatelessWidget {
       width: width,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Config.primaryColor,
-          foregroundColor: Colors.white38,
+          backgroundColor: Colors.grey,
+          foregroundColor: Config.primaryColor,
 
         ),
         onPressed: disable ? null : onPressed,
@@ -31,7 +29,7 @@ class Butomlogin extends StatelessWidget {
           title,
           style: const TextStyle(
             fontSize: 20,
-            fontWeight: FontWeight.bold,
+            //fontWeight: FontWeight.bold,
           ),
         ),
       ),

@@ -1,12 +1,10 @@
-
-
 import 'package:barber_lord_definitivo/utils/config.dart';
 import 'package:flutter/material.dart';
 
 import 'butomLogin.dart';
 
 class FormLogin extends StatefulWidget {
-  const FormLogin({Key? key}) : super(key: key);
+  const FormLogin({super.key});
 
   @override
   State<FormLogin> createState() => _FormLoginState();
@@ -57,7 +55,7 @@ class _FormLoginState extends State<FormLogin> {
                     icon: obsecurePass
                         ? const Icon(
                       Icons.visibility_off_outlined,
-                      color: Colors.black,
+                      color: Colors.black87,
                     )
                         : const Icon(
                       Icons.visibility_outlined,
@@ -68,7 +66,9 @@ class _FormLoginState extends State<FormLogin> {
           Butomlogin(
             width: double.infinity,
             title: 'Entrar',
-            onPressed: () {  },
+            onPressed: () {
+              Navigator.of(context).pushNamed('main');
+            },
             disable: false,
           )
           // Consumer<AuthModel>(

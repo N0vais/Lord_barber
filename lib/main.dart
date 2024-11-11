@@ -1,4 +1,6 @@
 import 'package:barber_lord_definitivo/screens/authentication.dart';
+import 'package:barber_lord_definitivo/screens/barberDetail_page.dart';
+import 'package:barber_lord_definitivo/screens/introduction.dart';
 import 'package:barber_lord_definitivo/utils/config.dart';
 import 'package:barber_lord_definitivo/utils/main_layout.dart';
 import 'package:flutter/material.dart';
@@ -32,21 +34,23 @@ class MyApp extends StatelessWidget {
           floatingLabelStyle: TextStyle(color: Config.primaryColor),
           prefixIconColor: Colors.black,
         ),
-        scaffoldBackgroundColor: Colors.brown.shade200,
+
+        scaffoldBackgroundColor: Colors.brown.shade100,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: Config.primaryColor,
           selectedItemColor: Colors.black12,
           showSelectedLabels: true,
           showUnselectedLabels: false,
           unselectedItemColor: Colors.grey.shade700,
-          elevation: 10,
+          elevation: 40,
           type: BottomNavigationBarType.fixed,
         ),
       ),
-      initialRoute: '/',
+      initialRoute: 'intro',
       routes: {
-        '/': (context) => const AutenticationPage(),
-        'main':(context)=> const MainLayout()
+        'intro': (context) => const Introduction(),
+        'main':(context)=> const MainLayout(),
+        'detalhe_barber': (context)=> const BarberDetail(),
       },
 
     );

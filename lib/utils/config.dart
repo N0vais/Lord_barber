@@ -38,15 +38,16 @@ class Config {
   static const focusBorder = OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(0)),
     borderSide: BorderSide(
-      color: Colors.black,
+      color: Colors.blueGrey,
     )
   );
   static const errorBorder = OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(0)),
       borderSide: BorderSide(
-        color: Colors.amberAccent,
+        color: Colors.redAccent,
       )
   );
 
   static const primaryColor = Colors.black;
+  static const secondColor = Colors.white;
 }
