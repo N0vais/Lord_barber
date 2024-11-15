@@ -1,12 +1,11 @@
 import 'package:barber_lord_definitivo/components/card_agenda.dart';
 import 'package:barber_lord_definitivo/utils/config.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardAgendamento extends StatefulWidget {
   const CardAgendamento({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<CardAgendamento> createState() => _CardAgendamento();

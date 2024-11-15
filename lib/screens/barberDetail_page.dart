@@ -2,10 +2,12 @@ import 'package:barber_lord_definitivo/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../components/butomLogin.dart';
 import '../components/custon_appbar.dart';
 
 class BarberDetail extends StatefulWidget {
-  const BarberDetail({Key? key}) : super(key: key);
+  const BarberDetail({super.key});
+
   @override
   State<BarberDetail> createState() => _BarberDetailState();
 }
@@ -21,6 +23,7 @@ class _BarberDetailState extends State<BarberDetail> {
         icon: const FaIcon(Icons.arrow_back_ios),
         actions: [
           IconButton(
+            //botao do favorito
             onPressed: () {
               setState(() {
                 isFavorite = !isFavorite;
@@ -34,14 +37,29 @@ class _BarberDetailState extends State<BarberDetail> {
         ],
       ),
       body: SafeArea(
-          child: Column(
-        children: <Widget>[
-          ///aui vai o avtar e a introducao do barbeiro
-          AboutBarber(),
+          child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            AboutBarber(),
 
-          ///aqui vai os detalhes do barbeiro
-          BarberInfo(),
-        ],
+            ///aui vai o avtar e a introducao do barbeiro
+            DetalhesBarbeiro(),
+
+            ///aqui vai os detalhes do barbeiro
+            Config.spaceSmall,
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Butomlogin(
+                  width: double.infinity,
+                  title: 'Agendamento',
+                  onPressed: () {
+                    //naavegaçao do botao
+                    Navigator.of(context).pushNamed('bookin');
+                  },
+                  disable: false),
+            )
+          ],
+        ),
       )),
     );
   }
@@ -64,18 +82,18 @@ class AboutBarber extends StatelessWidget {
           ),
           Config.spaceMedian,
           Text(
-            'Barbeiro Richarlison lopes',
+            'Barbeiro, Richarlison lopes',
             style: TextStyle(
               color: Colors.black,
               fontSize: 24.0,
               fontWeight: FontWeight.bold,
             ),
           ),
-          Config.spaceMedian,
+          Config.spaceSmall,
           SizedBox(
             width: Config.widthSize * 0.75,
             child: const Text(
-              'Sou uma pessoa estrovertida e ganhei o meu publico com sinceriada e honestidade,cobrando o preço justo e oferecendo um bom serviço (ESSE SOU EU). ',
+              'Sou uma pessoa estrovertida e ganhei o publico com sinceriada, oferecendo um bom serviço (ESSE SOU EU). ',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 15,
@@ -118,14 +136,24 @@ class DetalhesBarbeiro extends StatelessWidget {
         children: <Widget>[
           Config.spaceSmall,
           const BarberInfo(),
-          Config.spaceBig,
-          const Text('Sobre o barbeiro',
-          style: TextStyle(
-            color: Colors.black ,
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
+          Config.spaceMedian,
+          const Text(
+            'Sobre o barbeiro',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
           ),
-          )
+          Config.spaceSmall,
+          Text(
+            "Com habilidades e um olhar atento aos detalhes, Richarlison lopes esculpe barbas impecáveis. Sua jornada na arte da barbearia começou na escola , onde ele aperfeiçoou técnicas modernas. tornando-o um verdadeiro mestre da barba.",
+            style: TextStyle(
+              height: 1.2,
+            ),
+            softWrap: true,
+            textAlign: TextAlign.justify,
+          ),
         ],
       ),
     );
@@ -140,17 +168,11 @@ class BarberInfo extends StatelessWidget {
     return Row(
       children: const <Widget>[
         SizedBox(width: 15),
-        InfoCard(
-            label: 'Clientes',
-            value: '189'),
+        InfoCard(label: 'Clientes', value: '189'),
         SizedBox(width: 15),
-        InfoCard(
-            label: 'Experiencia',
-            value: '4 anos'),
+        InfoCard(label: 'Experiencia', value: '4 anos'),
         SizedBox(width: 15),
-        InfoCard(
-            label: 'Avaliações',
-            value: '5.0'),
+        InfoCard(label: 'Avaliações', value: '5.0'),
         SizedBox(width: 15),
       ],
     );
@@ -165,34 +187,33 @@ class InfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  return   Expanded(
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
-          color: Colors.blueGrey.shade700,
-        ),
-        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
-        child: Column(
-          children: <Widget>[
-            Text(
-              label,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-              ),
+    return Expanded(
+        child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(0),
+        color: Colors.blueGrey.shade700,
+      ),
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
+      child: Column(
+        children: <Widget>[
+          Text(
+            label,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
             ),
-            const SizedBox(height: 10),
-            Text(
-              value,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-              ),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            value,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
             ),
-          ],
-        ),
-      ));
+          ),
+        ],
+      ),
+    ));
   }
 }

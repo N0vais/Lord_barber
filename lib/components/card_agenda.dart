@@ -1,9 +1,8 @@
 //card do agendamento,da pagina principal
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardAgenda extends StatelessWidget {
-  const CardAgenda({Key? key}) : super(key: key);
+  const CardAgenda({super.key});
 
   @override
   Widget build(BuildContext context) {

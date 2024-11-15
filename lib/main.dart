@@ -1,6 +1,7 @@
-import 'package:barber_lord_definitivo/screens/authentication.dart';
 import 'package:barber_lord_definitivo/screens/barberDetail_page.dart';
+import 'package:barber_lord_definitivo/screens/bookin_screen.dart';
 import 'package:barber_lord_definitivo/screens/introduction.dart';
+import 'package:barber_lord_definitivo/screens/succesBokin_page.dart';
 import 'package:barber_lord_definitivo/utils/config.dart';
 import 'package:barber_lord_definitivo/utils/main_layout.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +52,8 @@ class MyApp extends StatelessWidget {
         'intro': (context) => const Introduction(),
         'main':(context)=> const MainLayout(),
         'detalhe_barber': (context)=> const BarberDetail(),
+        'bookin': (context)=> const BookinScreen(),
+        'succes _bookin': (context)=> const SuccesbokinPage(),
       },
 
     );

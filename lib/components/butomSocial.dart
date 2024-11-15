@@ -2,7 +2,7 @@ import 'package:barber_lord_definitivo/utils/config.dart';
 import 'package:flutter/material.dart';
 
 class ButomSocial extends StatelessWidget {
-  const ButomSocial({Key? key, required this.social}) : super(key: key);
+  const ButomSocial({super.key, required this.social});
 
   final String social;
 

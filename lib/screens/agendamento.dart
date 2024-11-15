@@ -228,7 +228,7 @@ class _AgendamentoPageState extends State<AgendamentoPage> {
   }
 }
 class CardAgenda extends StatelessWidget {
-  const CardAgenda({Key? key}) : super(key: key);
+  const CardAgenda({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -57,7 +57,7 @@ class _CustonAppbarState extends State<CustonAppbar> {
             )
           : null,
       //se a acao ester vazia retarna nulo
-      actions: widget.actions ?? null,
+      actions: widget.actions,
     );
   }
 }

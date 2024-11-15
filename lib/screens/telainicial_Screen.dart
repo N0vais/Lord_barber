@@ -85,7 +85,7 @@ class _TelaPrincipalState extends State<TelaPrincipalScreen> {
                 width: 30,
                 margin: const EdgeInsets.symmetric(horizontal: 5),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(0),
                   color: index == i
                       ? const Color(0xffffffff).withOpacity(0.8)
                       : Colors.grey.withOpacity(0.8),
