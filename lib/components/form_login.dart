@@ -1,3 +1,4 @@
+import 'package:barber_lord_definitivo/provider/provider.dart';
 import 'package:barber_lord_definitivo/utils/config.dart';
 import 'package:flutter/material.dart';
 
@@ -66,8 +67,11 @@ class _FormLoginState extends State<FormLogin> {
           Butomlogin(
             width: double.infinity,
             title: 'Entrar',
-            onPressed: () {
-              Navigator.of(context).pushNamed('main');
+            onPressed: () async{
+              final token = await Provider()
+              .getToken(_emailController.text, _passController.text);
+              print(token);
+             // Navigator.of(context).pushNamed('main');
             },
             disable: false,
           )
