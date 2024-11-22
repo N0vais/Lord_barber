@@ -1,7 +1,9 @@
+
 import 'package:barber_lord_definitivo/components/card_agendamento.dart';
 import 'package:barber_lord_definitivo/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 import '../components/card_barbeiro.dart';
 
@@ -13,6 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   List<Map<String, dynamic>> estilos = [
     {
       "icon": FontAwesomeIcons.usersViewfinder,
@@ -35,6 +38,9 @@ class _HomePageState extends State<HomePage> {
       "category": "depilador(a)",
     },
   ];
+
+
+
   @override
   Widget build(BuildContext context) {
     Config().init(context);

@@ -1,6 +1,9 @@
-import 'package:barber_lord_definitivo/provider/provider.dart';
+import 'package:barber_lord_definitivo/main.dart';
+import 'package:barber_lord_definitivo/models/model_autentication.dart';
+import 'package:barber_lord_definitivo/provider/dio_provider.dart';
 import 'package:barber_lord_definitivo/utils/config.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'butomLogin.dart';
 
@@ -55,26 +58,29 @@ class _FormLoginState extends State<FormLogin> {
                     },
                     icon: obsecurePass
                         ? const Icon(
-                      Icons.visibility_off_outlined,
-                      color: Colors.black87,
-                    )
+                            Icons.visibility_off_outlined,
+                            color: Colors.black87,
+                          )
                         : const Icon(
-                      Icons.visibility_outlined,
-                      color: Config.primaryColor,
-                    ))),
+                            Icons.visibility_outlined,
+                            color: Config.primaryColor,
+                          ))),
           ),
           Config.spaceSmall,
           Butomlogin(
-            width: double.infinity,
-            title: 'Entrar',
-            onPressed: () async{
-              final token = await Provider()
-              .getToken(_emailController.text, _passController.text);
-              print(token);
-             // Navigator.of(context).pushNamed('main');
-            },
-            disable: false,
-          )
+                width: double.infinity,
+                title: 'Entrar',
+                onPressed: () async{
+                  final token = await DioProvider()
+                      .getToken(_emailController.text, _passController.text);
+                  final user = await DioProvider().getUser(token);
+                  print(user);
+                  // Navigator.of(context).pushNamed('main');
+                },
+                disable: false,
+              ),
+
+
           // Consumer<AuthModel>(
           //   builder: (context, auth, child) {
           //     return Button(
